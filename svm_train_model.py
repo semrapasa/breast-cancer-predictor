@@ -15,6 +15,7 @@ df = pd.DataFrame(sklearn_verisi.data, columns=sklearn_verisi.feature_names)
 df = df.drop(columns=['id', 'Unnamed: 32'], errors='ignore')
 
 df['diagnosis'] = sklearn_verisi.target
+
 print("Sınıf dağılımı (0 kötü 1 iyi huylu)")
 print(df['diagnosis'].value_counts())
 print("İlk 5 satır")
@@ -37,7 +38,6 @@ model = SVC(kernel='rbf', probability=True, random_state=42)
 model.fit(x_train_scaled, y_train)
 
 tahmin = model.predict(x_test_scaled)
-print(tahmin)
 print(classification_report(y_test, tahmin,
       target_names=['Kotu Huylu', 'Iyi Huylu']))
 dogruluk = accuracy_score(y_test, tahmin)
