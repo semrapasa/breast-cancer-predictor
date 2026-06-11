@@ -37,6 +37,7 @@ model = SVC(kernel='rbf', probability=True, random_state=42)
 model.fit(x_train_scaled, y_train)
 
 tahmin = model.predict(x_test_scaled)
+print(tahmin)
 print(classification_report(y_test, tahmin,
       target_names=['Kotu Huylu', 'Iyi Huylu']))
 dogruluk = accuracy_score(y_test, tahmin)
