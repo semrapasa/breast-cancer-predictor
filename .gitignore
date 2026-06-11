@@ -3,6 +3,7 @@ ENV/
 env/
 .venv/
 
+models/
 models/*.joblib
 models/*.pkl
 *.joblib
